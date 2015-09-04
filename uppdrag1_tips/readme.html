@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Uppdrag1 - tips</title>
+<link  href="style.css" rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<div id="content">
+
+  <h1>Uppdrag 1 <span id="smalltext">- tips</span></h1>
+
+  <article>
+  Några korta steg till hur jag löste kodningen av uppdrag 1 :
+    
+  <h2>1. Skapa mappstruktur</h2>
+    Till denna lilla site behövdes ingen större mappstruktur. En enkel, för att vänja sig vid hur man brukar organisera saker inför större projekt, är dock på sin plats. Följande bild illustrerar en vettig struktur:
+    
+ <img src="files_folders.jpg" alt="Alla mappar och några filer i projektet"/>
+      
+  <h2>2. Skapa en grundsida</h2>
+    Som jag förklarat och som bilden ovan visar så delade jag upp grundsidan i fem delar: index.php, head.php, navmenu.php, <strong>inneåll</strong> foot.php 
+    Där innehåll är olika filer som laddas utifrån vilken navigation som användaren har klickat på. En fil för varje innehåll. Filera innehåller ungefär följande:
+   <ul>
+       <li><h3>head.php</h3>Vanlig html-kod (från doctype ner till start-body-taggen).</li>
+       <li><h3>foot.php</h3>Vanlig html-kod (från slut-body-taggen till slut-html-taggen).</li>
+       <li><h3>navmenu.php</h3>Vanlig html-kod (innehåller som du kanske förstår navigationsmenyn, dvs ul,li och a-taggar).</li>
+       <li><h3>innehåll</h3>Vanlig html-kod från olika filer (filerna är tänkta att ligga i mappen pageparts).</li>
+       <li><h3>index.php</h3> php-kod som laddar olika filer. Om du vill ha hjälp med att komma igång med php  <a href="#php">läs då här.</a></li>
+      </ul>
+
+  <h2>3. Skapa navigationsmeny</h2>
+      En guide för hur du skapar den finns som sagt <a href="http://medialoot.com/blog/how-to-create-a-responsive-navigation-menu-using-only-css/">här</a>.
+  <h2>4. Skapa respektive sida.</h2>
+      Mycket att skriva blir det...
+  </article> 
+    
+    <article>
+    <hr>
+    <a name='php'><h2 >Kort PHP-guide</h2></a>
+    <h3>Installation</h3>
+    För jobba med PHP behöver man tre saker: 
+        <ol><li> en lokal utvecklingsmiljö (<a href="https://www.apachefriends.org/index.html">xampp</a>)</li><li> en publik webbserver med php-stöd (<a href="http://t4.skelamp.se/">skelamp</a>)</li><li> ett ftp-program (<a href="https://filezilla-project.org/download.php?type=client">filezilla</a>).</li></ol>
+
+Ladda ner och installera xampp samt filezilla.<br/> 
+Konfiguerar sedan filezilla så att den kan ansluta till skelamp. Fråga Urban om användarnamn och lösenord.<br/>  Utveckla dina php-filer (testa dem genom att lägga dem i <strong>htdocs-mappen</strong> och skriva localhost).<br/>  Överför sedan filerna till servern.
+        
+    <h3>include</h3>
+    Om man delar upp en webbsida i flera filer (som jag föreslagit ovan) så behöver man ju få ihop den igen.
+    Det kan enkelt göras med php-kommandot include. Så här enkelt är det:
+        
+    <textarea>
+    <?php include 'filnamn.php'; ?>    
+    </textarea>
+    
+    </article>
+    
+</div>    
+</body>
+
+</html>
