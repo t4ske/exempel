@@ -180,21 +180,26 @@ Det är alltså inte något fel i sig, utan bara ett meddelande om att viss konv
 
 <iframe src="https://www.youtube.com/embed/8yulcmIfWD8" frameborder="0" allowfullscreen></iframe>
 
-<a name="reset"><h3>Backa till en specifik tagg</h3></a>
+<p><strong>En liten varning: använd inte taggar för ofta - de raderas inte om man backar...</strong></p>
 
-<p>För att se en lista på alla dina taggar skriver du:</p>
+<a name="reset"><h3>Backa till en tidigare version</h3></a>
 
-<pre class="bash geshi"><span class="kw2">git tag</span></pre>
+<p>För att se en lista på dina commits skriver du:</p>
 
-<p>För att backa tillbaka till en specifik tagg (eller branch/commit id) gör du: </p>
+<pre class="bash geshi"><span class="kw2">git log </span> --pretty=oneline</pre>
 
-<pre class="bash geshi"><span class="kw2">git reset</span><span class="re5">--hard</span> tagtext</pre>
+<p>För att backa tillbaka till en specifik commit skriver du git reset följt av numret på commiten (början av numret räcker): </p>
+
+<pre class="bash geshi"><span class="kw2">git reset</span><span class="re5">--hard</span> commitnummer</pre>
 
 <p>Git reset utan --hard återställer commit-historiken men inte filerna. Med --hard återställs filerna också (så vill du förmodligen ha det).</p>
 
 <p>För att rulla tillbaka läget på GitHub (till samma läge som du backat till på ditt lokala repo) skriver du: </p>
 
-<pre class="bash geshi"><span class="kw2">git push</span> namnetPåDittRepo <span class="re5">-f</span></pre>
+<pre class="bash geshi"><span class="kw2">git push</span> fjärrNamnetPåDittRepo <span class="re5">-f</span></pre>
+
+<p>git push använder syntaxen git push &lt;remote&gt; &lt;local&gt;</p>
+<p>för att ladda upp eventuella taggarna måste man skriva git push &lt;remote&gt; --tags</p>
 
 <a name="clone"><h3>Clona ett repot till egen dator eller till en driftsserver</h3></a>
 
