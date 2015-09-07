@@ -1,9 +1,12 @@
-body{ margin: 0; padding:0;}
+body{ margin: 0; padding:0; padding-bottom: 1200px;}
 
 @font-face {
     font-family: "Comfortaa";
     src: url('../fonts/comfortaa/Comfortaa-Regular.ttf');
 }
+
+#totop{ position: fixed; bottom: 46%; left: -25px;}
+#totop img{ width: 100px;  opacity: 0.2; }
 
 h1{ 
 	color: white;

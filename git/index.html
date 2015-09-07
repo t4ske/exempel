@@ -8,28 +8,35 @@
 </head>
 <body>
 
-<header>
+<a href="#top"><div id="totop"><img src="img/up-grey-arrow.png"></div></a>
+<a name="top"><header>
 <h1>Kom igång med Git och GitHub</h1>
-</header>
+</header></a>
 
 <article>
 <p class="ingress">Git och GitHub är två verktyg inom versionshantering som växer i populäritet bland webbutvecklare. Här får du hjälp att komma igång med grunderna till de två populära verktygen. <strong>Git är versionshanteringssystemet</strong> och <strong>GitHub är en webbplats</strong> som erbjuder utvecklare att “hosta” sina git-projekt. När de samverkar, eller när du får dem att samverka, ger de en stabil grund för hantering av programvara, som står sig långt in i professionell programutveckling.</p>
 
 <div>
 <h3>Innehållförteckning:</h3>
-<p>Denna text innehåller (hittils) följande avsnitt:</p>
+<p>Denna text innehåller följande avsnitt:</p>
 <ul>
-	<li>Om git</li>
-	<li>Installera git</li>
-	<li>Ett första repo</li>
-	<li>Om GitHub</li>
-	<li>Överför från Git till GitHub</li>
+	<li><a href="#aboutgit">Om git</a></li>
+	<li><a href="#installgit">Installera git</a></li>
+	<li><a href="#firstrepo">Ett första repo</a></li>
+	<li><a href="#aboutgithub">Om GitHub</a></li>
+	<li><a href="#transfertogithub">Överför från Git till GitHub</a></li>
+	<li><a href="#commitpush">Committa och pusha</a></li>
+	<li><a href="#tag">Tagga</a></li>
+	<li><a href="#reset">Backa till en tidigare version</a></li>
+	<li><a href="#clone">Hämta hem ett repo (clone/pull)</a></li>
+	<li><a href="#resume">Avslutning</a></li>
+	<li><a href="#nologin">SSH-nyckar (för att slippa skriva inloggning)</a></li>
 </ul>
 </div>
 
 <h2>Git - ett versionshanteringsverktyg</h2>
 
-<h3>Om Git</h3>
+<a name="aboutgit"><h3>Om Git</h3></a>
 
 <p>Git är ett versionshanteringssystem utvecklat Linus Torvalds (skaparen till Linux operativsystem). Linus var inte nöjd med versionshanteringsverktygen som använde så han uppmuntrade att de skulle bygga ett eget. Sagt och gjort, Git föddes.</p>
 
@@ -43,7 +50,7 @@
 
 <p>Okej, så långt allt bra, låt nu oss börja med att installera Git på vår egen maskin.</p>
 
-<h3>Installera Git</h3>
+<a name="installgit"><h3>Installera Git</h3></a>
 
 <p>Börja med att ladda ned och installera programvaran för Git:<a href="http://git-scm.com/download">http://git-scm.com/download</a></p>
 
@@ -76,7 +83,7 @@
 
 <p>Så! Då ska allt funka!? När Git är installerat kan vi skapa ett repository.</p>
 
-<h3>Ditt första repository</h3>
+<a name="firstrepo"><h3>Ditt första repository</h3></a>
 
 <p>Det allra första vi gör är att konfigurera vem du är som användare.</p>
 
@@ -108,11 +115,11 @@
 Det beror på att git automatiskt översätter mellan Windows och Unix radbrytningar. Om du kör git add . och får upp lite obskyra varningar om att att LF ersätts med CRLF och inte förstår vad det betyder. Så handlar det om är att windows och unix har olika sätt att hantera slutet på rader. Windows använder något som kallas Carriage Return (CR) och Line Feed (LF) vilket blir CRLF. Unix använder enbart LF. 
 Det är alltså inte något fel i sig, utan bara ett meddelande om att viss konvertering kommer ske. De flesta texteditorer har stöd för detta, vilket är anledningen till att det inte dök upp i videon ovan. Om du anänder t.ex. jEdit som tydligen inte har stöd för automatiskt konverterig så kan om du vill kan du stänga av varningarna med: <em>git config core.autocrlf false </em></p>
 
-<h2>GitHub - en webbtjänst för att lagra och publicera repon</h2>
+<a name="aboutgithub"><h2>GitHub - en webbtjänst för att lagra och publicera repon</h2></a>
 
 <p>GitHub är en webbtjänst som ger dig möjlighet att lagra Git-repo på deras servrar. Det är ett trevligt webbgränssnitt och många stora öppna källkodsprojekt använder sig av GitHub.</p>
 
-<h3>Överför från Git till GitHub</h3>
+<a name="transfertogithub"><h3>Överför från Git till GitHub</h3></a>
 
 <p>Det vi skall göra nu är att skapa ett konto på GitHub och därefter länka samman vårt nyskapade lokala repo så att det hamnar på GitHub.</p>
 
@@ -137,8 +144,100 @@ Det är alltså inte något fel i sig, utan bara ett meddelande om att viss konv
 
 <p>Nu har vi skapat ett repo som finns på GitHub. Bra, då kan vi börja jobba på riktigt.</p>
 
+<h2>Jobba i det lokala repot och uppdatera GitHub</h2>
 
+<a name="commitpush"><h3>Committa och pusha</h3>
 
+<p>Nu har du ditt lokala repo som du kan utveckla i. Så fort du gjort några ändringar så kan du göra push på dem till github enligt följande.</p>
+
+<pre class="bash geshi"><span class="kw2">git commit</span> <span class="re5">-a</span> <span class="re5">-m</span> <span class="st0">"Explain what changes I did"</span> 
+<span class="kw2">git push</span></pre>
+
+<p>Du kan committa en specifik fil, commit README.md, eller alla filer som har ändringar i sig, commit -a. En commit görs till ditt lokala repository.</p>
+
+<p>När du sedan gör en git push så laddas de ändrade filerna upp till GitHub.</p>
+
+<p>Sedan är du i synk, dina ändringar i ditt lokala repo matchar repot på GitHub. Det är viktigt att hålla ordning så att GitHub är i synk med din lokala variant.</p>
+
+<h3>Ny default-inställning för Git-push från och med version 2.0</h3>
+
+<p>Det är enkelt att använda <em>git push</em>. Men från och med version 2.0 av Git så kan det krävas att du behöver göra en default-inställning.</p>
+
+<pre class="bash geshi"><span class="kw2">git config</span> <span class="re5">--global</span> push.default simple</pre>
+
+<p>Läs mer på manualsidan för <a href="http://git-scm.com/docs/git-config"><code>git-config</code> (sök på push.default)</a></p>
+
+<a name="tag"><h3>Tagga</h3></a>
+
+<p>När du har gjort en del ändringar så vill du troligen skapa en ny version av din kod, en version som du vid behov kan gå tillbaka till. Detta gör du genom att sätta en tag med Git.</p>
+
+<p>Följande kommandon lägger till en tagg och pushar den till GitHub.</p>
+
+<pre class="bash geshi"><span class="kw2">git tag</span> <span class="re5">-a</span> v0.1 <span class="re5">-m</span> <span class="st0">"Descriptive text about the tag"</span> 
+<span class="kw2">git push</span> <span class="re5">--tags</span></pre>
+
+<p>Följande video visar hur man kan göra:</p>
+
+<iframe src="https://www.youtube.com/embed/8yulcmIfWD8" frameborder="0" allowfullscreen></iframe>
+
+<a name="reset"><h3>Backa till en specifik tagg</h3></a>
+
+<p>För att se en lista på alla dina taggar skriver du:</p>
+
+<pre class="bash geshi"><span class="kw2">git tag</span></pre>
+
+<p>För att backa tillbaka till en specifik tagg (eller branch/commit id) gör du: </p>
+
+<pre class="bash geshi"><span class="kw2">git reset</span><span class="re5">--hard</span> tagtext</pre>
+
+<p>Git reset utan --hard återställer commit-historiken men inte filerna. Med --hard återställs filerna också (så vill du förmodligen ha det).</p>
+
+<p>För att rulla tillbaka läget på GitHub (till samma läge som du backat till på ditt lokala repo) skriver du: </p>
+
+<pre class="bash geshi"><span class="kw2">git push</span> namnetPåDittRepo <span class="re5">-f</span></pre>
+
+<a name="clone"><h3>Clona ett repot till egen dator eller till en driftsserver</h3></a>
+
+<p>Nu när repot finns på GitHub så är det enkelt för en och var att ladda ned sin egen kopia av det. Det magiska ordet heter clone.</p>
+
+<p>Vill man senare ladda ned den allra senaste varianten så görs det med pull.</p>
+
+<p>Följande kommandon används:</p>
+
+<pre class="bash geshi"><span class="kw2">git clone</span> https:<span class="sy0">//</span>github.com<span class="sy0">/</span>dbwebb<span class="sy0">/</span>hello
+&nbsp;
+<span class="kw2">git pull</span> <span class="co0"># hämta ned senaste ändringarna från repot på GitHub</span></pre>
+
+<p>Videon här visar hur man gör:</p>
+
+<iframe  src="https://www.youtube.com/embed/hCYgEqiKOjE" frameborder="0" allowfullscreen></iframe>
+
+<p>Läs gärna mer i manualen om respektive kommando:</p>
+<ul>
+<li><a href="http://git-scm.com/docs/git-commit"><code>git commit</code></a></li>
+<li><a href="http://git-scm.com/docs/git-push"><code>git push</code></a></li>
+<li><a href="http://git-scm.com/docs/git-tag"><code>git tag</code></a></li>
+<li><a href="http://git-scm.com/docs/git-config"><code>git config</code></a></li>
+<li><a href="http://git-scm.com/docs/git-clone"><code>git clone</code></a></li>
+<li><a href="http://git-scm.com/docs/git-clone"><code>git pull</code></a></li>
+</ul>
+
+<a name="resume"><h2>Avslutningsvis</h2></a>
+
+Nu har du kommit igång med både Git och GitHub. Som du säkert förstår så är detta bara grunderna och det finns mycket att lära sig om både Git och GitHub. Men, nu har du iallafall en bas att jobbar vidare ifrån.</p>
+
+<p>Lycka till och kämpa på!</p>
+
+<p>Dagens lästips är <a href="http://git-scm.com/book">manualen för Git</a>.</p>
+
+<p>När du blir varm i kläderna så kommer du att vilja sätta upp ssh-nycklar så att du slipper skriva lösenordet varje gång. Läs gärna på om hur du sätter upp ssh-nycklarna på GitHub (här nedan). Men det kan upplevas lite pilligt, när du gör det första gången... </p>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<a name="nologin"><h3>Slippa inloggning</h3></a>
+<p>Så du är lat och vill slippa skriva in användarnamn och lösenord vare gång (bra!). <a href="https://help.github.com/articles/generating-ssh-keys">Här hittar du in instruktion för hur du slippper det.</a> 
 </article>
 
 </body>
