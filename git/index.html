@@ -15,6 +15,18 @@
 <article>
 <p class="ingress">Git och GitHub är två verktyg inom versionshantering som växer i populäritet bland webbutvecklare. Här får du hjälp att komma igång med grunderna till de två populära verktygen. <strong>Git är versionshanteringssystemet</strong> och <strong>GitHub är en webbplats</strong> som erbjuder utvecklare att “hosta” sina git-projekt. När de samverkar, eller när du får dem att samverka, ger de en stabil grund för hantering av programvara, som står sig långt in i professionell programutveckling.</p>
 
+<div>
+<h3>Innehållförteckning:</h3>
+<p>Denna text innehåller (hittils) följande avsnitt:</p>
+<ul>
+	<li>Om git</li>
+	<li>Installera git</li>
+	<li>Ett första repo</li>
+	<li>Om GitHub</li>
+	<li>Överför från Git till GitHub</li>
+</ul>
+</div>
+
 <h2>Git - ett versionshanteringsverktyg</h2>
 
 <h3>Om Git</h3>
@@ -36,6 +48,96 @@
 <p>Börja med att ladda ned och installera programvaran för Git:<a href="http://git-scm.com/download">http://git-scm.com/download</a></p>
 
 <p>Följande video visar hur du gör:</p>
+
+<iframe src="https://www.youtube.com/embed/QvZXkGrHi-Y" frameborder="0" allowfullscreen></iframe>
+
+<h3>Ett litet tillägg till videon ovan (när du installerar på windows):</h3>
+<p>Sen videon gjordes verkar det ha kommit en ny version med en liten inställning vid installationen. Klicka dig fram (som vanligt) tills du kommer till dialogrutan:</p>
+
+<img src="img/git-install-to-path.png" alt="ange installationssökväg">
+
+<p>Se till att mittenvalet är gjort i första dialogen, du måste kunna använda Git från terminalen `cmd.exe`.</p>
+
+<img src="img/git-install-as-is.png" alt="ange installationssökväg">
+
+<p>I nästa ruta så skall du välja det sista valet som inte gör någon automatisk påverkan på dina filer.</p>
+
+<p><strong>Testa installationen</strong></p>
+
+<p>Testa installationen genom att köra följande kommando i din cmd.exe.</p>
+
+<pre class="bash geshi">
+<span class="kw2">$ git --version</span>
+</pre>
+
+<p>Kommandot Git  ska nu finnas med i pathen och kunna köras från cmd.exe. Så här kan det se ut:
+
+<img src="img/git-version.png" alt="ange installationssökväg">
+
+<p>Så! Då ska allt funka!? När Git är installerat kan vi skapa ett repository.</p>
+
+<h3>Ditt första repository</h3>
+
+<p>Det allra första vi gör är att konfigurera vem du är som användare.</p>
+
+<pre class="bash geshi">
+<span class="kw2">git config</span> <span class="re5">--global</span> user.name <span class="st0">"Kalle Anka"</span>
+<span class="kw2">git config</span> <span class="re5">--global</span> user.email <span class="st0">"kalle@home.se"</span>
+<span class="kw2">git config</span> <span class="re5">--list</span>
+</pre>
+
+<p>Ett Git repository är en katalog som hanteras av Git. Låt oss skapa ett litet testprojekt som vi initierar i Git. Följande kommandon hjälper oss med det.</p>
+
+<pre class="bash geshi">
+<span class="kw2">mkdir</span> hello
+<span class="kw3">cd</span> hello
+<span class="kw2">git init</span>
+<span class="kw2">touch</span> hello.php 
+<span class="kw2">touch</span> README.md
+<span class="kw2">git add</span> .
+<span class="kw2">git status</span>
+<span class="kw2">git commit</span> <span class="re5">-m</span> <span class="st0">"Initial commit"</span></pre>
+
+<p>Du kan se hur man gör i den här videon:</p>
+
+<iframe  src="https://www.youtube.com/embed/08akJnBmrwo" frameborder="0" allowfullscreen></iframe>
+
+<p>Nästa steg får bli att koppla ihop repositoryt med webbtjänsten GitHub.</p>
+
+<p><strong>Får du varningar om “LF replaced with CRLF”? </strong><br/>
+Det beror på att git automatiskt översätter mellan Windows och Unix radbrytningar. Om du kör git add . och får upp lite obskyra varningar om att att LF ersätts med CRLF och inte förstår vad det betyder. Så handlar det om är att windows och unix har olika sätt att hantera slutet på rader. Windows använder något som kallas Carriage Return (CR) och Line Feed (LF) vilket blir CRLF. Unix använder enbart LF. 
+Det är alltså inte något fel i sig, utan bara ett meddelande om att viss konvertering kommer ske. De flesta texteditorer har stöd för detta, vilket är anledningen till att det inte dök upp i videon ovan. Om du anänder t.ex. jEdit som tydligen inte har stöd för automatiskt konverterig så kan om du vill kan du stänga av varningarna med: <em>git config core.autocrlf false </em></p>
+
+<h2>GitHub - en webbtjänst för att lagra och publicera repon</h2>
+
+<p>GitHub är en webbtjänst som ger dig möjlighet att lagra Git-repo på deras servrar. Det är ett trevligt webbgränssnitt och många stora öppna källkodsprojekt använder sig av GitHub.</p>
+
+<h3>Överför från Git till GitHub</h3>
+
+<p>Det vi skall göra nu är att skapa ett konto på GitHub och därefter länka samman vårt nyskapade lokala repo så att det hamnar på GitHub.</p>
+
+<p>Du kan följa med hur man gör i följande video:</p>
+
+<iframe src="https://www.youtube.com/embed/f5vNcvG6z1Q" frameborder="0" allowfullscreen></iframe>
+
+<p>De magiska orden som länkar ihop ditt lokala repo med ett repo på GitHub är alltså:</p>
+
+<pre class="bash geshi">
+<span class="kw2">git remote</span> add origin https:<span class="sy0">//</span>github.com<span class="sy0">/</span>dbwebb<span class="sy0">/</span>hello
+<span class="kw2">git push</span> <span class="re5">-u</span> origin master
+</pre>
+
+<h3>Bugg i Git Windows 1.8.5</h3>
+
+<p>När man pushar ett repo över https så fungerar inte interaktiv inloggning, man “promptas” inte för lösenord och användare. Använder man ssh-nycklar är det inget problem, annars behöver man nedgradera till version 1.8.4.</p>
+
+<pre class="bash geshi"><span class="kw2">git</span> <span class="re5">--version</span></pre>
+
+<p>Skapa sedan om ditt repository från början.</p>
+
+<p>Nu har vi skapat ett repo som finns på GitHub. Bra, då kan vi börja jobba på riktigt.</p>
+
+
 
 </article>
 

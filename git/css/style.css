@@ -20,7 +20,7 @@ h1{
 
  h2,h3, h4, h5, h6{font-family: "Comfortaa", sans-serif;}
 
- h2{ margin-top: 50px; color: #c00;}
+ h2{ margin-top: 50px; color: #072E56;}
 
  h3{ margin-top: 30px; }
 
@@ -28,7 +28,7 @@ h1{
 
  header{ 
  	padding: 55px; 
- 	background: #c00;
+ 	background: #072E56;
  	text-align: center;
 
  }
@@ -41,3 +41,20 @@ h1{
  }
 
  .ingress{ margin-top: 30px;  font-size: 22px; text-align: justify;}
+
+ iframe{ width: 1000px;  height: 564px; display: block; margin: 0 auto; border: 2px solid #072E56; border-radius: 3px;}
+
+img{ width: 1000px; display: block; margin:10px auto;}
+
+ .bash .de1,.bash .de2{font:normal normal 1em/1.2em monospace;margin:0;padding:0;background:none;vertical-align:top;}
+ .bash{font-family:monospace; background: #eee; padding: 10px; border: 1px solid #ccc; border-radius: 3px;}
+ .bash .imp{font-weight:bold;color:red;}.bash li,.bash .li1{font-weight:normal;vertical-align:top;}.bash 
+ .ln{width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}.bash .li2{font-weight:bold;vertical-align:top;}
+ .bash .kw1{color:#000;font-weight:bold;}.bash .kw2{color:#c20cb9;font-weight:bold;}.bash .kw3{color:#7a0874;font-weight:bold;}
+ .bash .co0{color:#666;font-style:italic;}.bash .co1{color:#800000;}.bash .co2{color:#c00;font-style:italic;}
+ .bash .co3{color:#000;font-weight:bold;}.bash .co4{color:#666;}.bash .es1{color:#009;font-weight:bold;}
+ .bash .es2{color:#007800;}.bash .es3{color:#007800;}.bash .es4{color:#007800;}.bash .es5{color:#780078;}
+ .bash .es_h{color:#009;font-weight:bold;}.bash .br0{color:#7a0874;font-weight:bold;}.bash .sy0{color:#000;font-weight:bold;}
+ .bash .st0{color:#f00;}.bash .st_h{color:#f00;}.bash .nu0{color:#000;}.bash .re0{color:#007800;}.bash .re1{color:#007800;}
+ .bash .re2{color:#007800;}.bash .re4{color:#007800;}.bash .re5{color:#603;}.bash .ln-xtra,.bash li.ln-xtra,
+ .bash div.ln-xtra{background-color:#ffc;}.bash span.xtra{display:block;}
