@@ -1,0 +1,28 @@
+<?php
+
+	//skapar en variabel(fält/array) för tärningsslag
+	$slag = array();
+
+	//fyller arrayen
+	for ($i=0; $i<6; $i++) 
+	{ 
+		$slag[] = rand(1,6);
+	}
+
+	//var_dump($slag);
+	//echo "<p>";
+
+	//skriv ut arrayen
+	for ($i=5; $i>=0; $i--) 
+	{ 
+		echo $slag[$i]."<br>"; 
+	}
+
+	//skriver ut seriens summa
+	echo "Summan av slagserien blev " . array_sum($slag). ".";
+	
+
+
+
+	
+?>

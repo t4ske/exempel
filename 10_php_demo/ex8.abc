@@ -1,0 +1,26 @@
+<?php
+	$in=false;
+
+	if(isset($_GET['name']))
+	{
+		//sätt $in till sant
+		$in = true;
+
+		//ta emot värde
+		$name = $_GET["name"];
+	} 
+?>
+<form>
+	Namn:<br>
+	<input type="text" name="name" <?php if($in) echo "value=\"$name\""; ?> required><br>
+	<input type="submit" value="Okej, skicka!">
+</form>
+
+<?php
+	if($in)
+	{
+		$sista=strlen($name)-1;
+	 	echo "Okej $name, första och sista bokstaven i ditt" 
+	 	 . " namn är {$name[0]} och {$name[$sista]}"; 
+	}
+?>

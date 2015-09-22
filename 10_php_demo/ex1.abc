@@ -1,0 +1,7 @@
+<?php 	
+	$slump = rand();
+	echo "Ett slumptal: " . $slump;
+	print "<p>";
+	$slump = rand(1,100);
+	echo "Jag är $slump trött på en skala 1-100." 
+?>

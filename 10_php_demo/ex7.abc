@@ -1,0 +1,31 @@
+<?php
+	
+	//deklarera ett heltal
+	$tal = 3.567;
+	echo "\$tal innehåller värdet $tal. <br>";
+	var_dump($tal);
+
+	echo "<p>";
+
+	//deklarera en sträng
+	$txt = "Urban är glad idag!";
+	echo "\$txt innehåller värdet $txt. <br>";
+	var_dump($txt);
+	echo "<br>Tecken tre i stängen är: " . $txt[2];
+
+	echo "<p>";
+
+	//dekarera ett fält
+	$falt = array();
+
+	//fyll en array/fält
+	$falt[] = 327;
+	$falt[] = 3.1415;
+	$falt[] = "Bosse";
+	$falt[] = true;
+
+	echo "Skapar ett fält med namnet \$falt som innehåller ";
+	var_dump($falt);
+	echo "<br>Låda två i arrayen : " . $falt[1];
+	
+?>

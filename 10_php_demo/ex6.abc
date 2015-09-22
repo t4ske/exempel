@@ -1,0 +1,44 @@
+<?php
+	$in=false;
+
+	if(isset($_GET['name']) && isset($_GET['age']))
+	{
+		//sätt $in till sant
+		$in = true;
+
+		//ta emot värden
+		$name = $_GET["name"];
+		$age = $_GET["age"];
+	} 
+?>
+<form>
+	Namn:<br>
+	<input type="text" name="name" <?php if($in) echo "value=\"$name\""; ?> required><br>
+	Ålder:<br>
+	<input type="number" name="age" <?php if($in) echo "value=\"$age\""; ?>required><p>
+	<input type="submit" value="Okej, skicka!">
+</form>
+
+<?php
+	
+	if($in)
+	{	
+		//skriv ut namn  och respons
+		echo "<p>Hej $name! ";
+		if($age<=12)
+			echo "Du är barn!";
+		else if($age<=17)
+			echo "Du är ungdom!";
+		else if($age<=25)
+			echo "Du är ung vuxen!";
+		else if($age<=45)
+			echo "Du är (full)vuxen!";
+		else if($age<=64)
+			echo "Du är medelålders!";
+		else if($age<=79)
+			echo "Du är pensionär!";
+		else
+			echo "Du är gammal (pensionär)!";
+
+	}
+?>

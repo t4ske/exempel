@@ -1,0 +1,45 @@
+<?php
+
+	//skapar en variabel(fält/array) för tärningsslag
+	$slag = array();
+
+	//skapar en variabel för att räkna antalet 6:or
+	$sexor=0;
+
+	//fyller arrayen och skriver ut
+	for ($i=0; $i<36; $i++) 
+	{ 
+		//slumpa och lagra i arrayen
+		$s = rand(1,6);
+		$slag[] = $s;
+
+		//skriv ut
+		echo $s . " ";
+	}
+
+	echo "<p>";
+
+	//räkna antalet sexor - alternativ 1
+	for ($i=0; $i<36; $i++) 
+	{ 
+		if($slag[$i]==6)
+			$sexor++;
+	}
+
+	//räkna antalet sexor - alternativ 2
+	$varden = array_count_values($slag);
+
+
+	//skriver ut seriens summa
+	echo "Summan av slagserien blev " . array_sum($slag). ".";
+	
+	//skrier ut antalet sexor - alt1
+	echo "<br>Antalet sexor i slagserien blev $sexor. (alt 1)";
+
+	//skrier ut antalet sexor - alt2
+	echo "<br>Antalet sexor i slagserien blev {$varden[6]}. (alt 2)";
+
+
+
+	
+?>

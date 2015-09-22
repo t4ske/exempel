@@ -1,0 +1,8 @@
+<?php 
+	
+	$alder = rand(1,100);
+
+	echo "Du är tydligen $alder år gammal.";
+
+
+?>

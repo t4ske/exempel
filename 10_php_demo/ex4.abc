@@ -1,0 +1,23 @@
+<?php 
+	
+	$alder = rand(1,100);
+
+	echo "Du är tydligen $alder år gammal. ";
+
+	if($alder<=12)
+		echo "Det betyder att du är barn!";
+	else if($alder>12 && $alder<=17)
+		echo "Det betyder att du är ungdom!";
+	else if($alder>17 && $alder<=25)
+		echo "Det betyder att du är ung vuxen!";
+	else if($alder>25 && $alder<=45)
+		echo "Det betyder att du är (full)vuxen!";
+	else if($alder>45 && $alder<=64)
+		echo "Det betyder att du är medelålders!";
+	else if($alder>65 && $alder<=79)
+		echo "Det betyder att du är pensionär!";
+	else
+		echo "Det betyder att du är gammal (pensionär)!";
+
+
+?>

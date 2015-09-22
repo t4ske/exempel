@@ -1,0 +1,16 @@
+<form>
+	<input type="text" name="txtruta">
+	<input type="submit" value="tryck">
+</form>
+
+<?php
+	
+	if(isset($_GET['txtruta']))
+	{	
+		//ta emot värde
+		$t = $_GET["txtruta"];
+
+		//kontrollutskrift
+		echo "Överfört värde är: $t";
+	}
+?>

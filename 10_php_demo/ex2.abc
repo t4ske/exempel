@@ -1,0 +1,6 @@
+<?php 	
+	$slump1 = rand(0,100);
+	$slump2 = rand(-100,0);
+	$summa = $slump1 + $slump2;
+	echo "Summan av slumptalen $slump1 och $slump2 är $summa"; 
+?>
